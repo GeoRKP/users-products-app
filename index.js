@@ -2,7 +2,8 @@ const express = require('express');
 const cors = require('cors')
 const app = express();
 const mongoose = require('mongoose');
-const port = 3000;
+
+const port = 3000
 
 require('dotenv').config()
 
@@ -39,7 +40,9 @@ app.use('/api/products', product)
 app.use('/api/users-products', user_products)
 
 
-app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument.options))
+app.use('/api-docs',
+    swaggerUI.serve,
+    swaggerUI.setup(swaggerDocument.options))
 
 app.listen(port, () => {
     console.log('Listening on port 3000')
